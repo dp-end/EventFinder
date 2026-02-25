@@ -1,0 +1,185 @@
+/* Animasyonlu Canlı Arka Plan */
+.eventfinder-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #6B5B95, #3B8BEB);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism (Buzlu Cam) Form Kartı */
+.glass-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  color: #fff;
+  text-align: center;
+}
+
+/* Header ve Logo */
+.header-section {
+  margin-bottom: 30px;
+}
+
+.icon-bg {
+  display: inline-flex;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.event-icon {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+
+.brand-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Form Elemanları */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+/* Hata Mesajı Stilleri (Yeni Eklendi) */
+.error-container {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.error-text {
+  color: #ff9b9b;
+  font-size: 12px;
+  font-weight: 500;
+  display: block;
+}
+
+/* Şifremi Unuttum */
+.forgot-password {
+  text-align: right;
+  margin-bottom: 25px;
+  margin-top: -10px;
+}
+
+.forgot-password a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.forgot-password a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Ana Buton */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #fff;
+  color: #FF6B6B;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 20px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buton inaktif (disabled) olduğundaki görünüm (Yeni Eklendi) */
+.btn-primary:disabled {
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 107, 107, 0.5);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Kayıt Ol Kısmı */
+.register-prompt {
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.register-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}

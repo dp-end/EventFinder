@@ -1,0 +1,85 @@
+<div class="eventfinder-wrapper">
+  <div class="glass-card wide-card">
+
+    <div class="header-section">
+      <h1 class="brand-name">Öğrenci Kaydı</h1>
+      <p class="subtitle">Etkinlik dünyasına adım atmaya çok yakınsın</p>
+    </div>
+
+    <form class="login-form" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-row">
+        <div class="input-group half-width">
+          <label for="firstName">Ad</label>
+          <input type="text" id="firstName" formControlName="firstName" placeholder="Örn: Ahmet">
+          <div class="error-container" *ngIf="studentForm.get('firstName')?.invalid && studentForm.get('firstName')?.touched">
+            <small class="error-text">Ad alanı zorunludur.</small>
+          </div>
+        </div>
+
+        <div class="input-group half-width">
+          <label for="lastName">Soyad</label>
+          <input type="text" id="lastName" formControlName="lastName" placeholder="Örn: Yılmaz">
+          <div class="error-container" *ngIf="studentForm.get('lastName')?.invalid && studentForm.get('lastName')?.touched">
+            <small class="error-text">Soyad alanı zorunludur.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-group half-width">
+          <label for="university">Üniversite</label>
+          <input type="text" id="university" formControlName="university" placeholder="Örn: Akdeniz Üniversitesi">
+          <div class="error-container" *ngIf="studentForm.get('university')?.invalid && studentForm.get('university')?.touched">
+            <small class="error-text">Üniversite zorunludur.</small>
+          </div>
+        </div>
+
+        <div class="input-group half-width">
+          <label for="department">Bölüm</label>
+          <input type="text" id="department" formControlName="department" placeholder="Örn: Bilgisayar Mühendisliği">
+          <div class="error-container" *ngIf="studentForm.get('department')?.invalid && studentForm.get('department')?.touched">
+            <small class="error-text">Bölüm zorunludur.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="email">E-posta (Öğrenci E-postası Tercih Edilir)</label>
+        <input type="email" id="email" formControlName="email" placeholder="ornek@ogrenci.edu.tr">
+        <div class="error-container" *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched">
+          <small class="error-text" *ngIf="studentForm.get('email')?.errors?.['required']">E-posta alanı zorunludur.</small>
+          <small class="error-text" *ngIf="studentForm.get('email')?.errors?.['email']">Lütfen geçerli bir e-posta girin.</small>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-group half-width">
+          <label for="password">Şifre</label>
+          <input type="password" id="password" formControlName="password" placeholder="••••••••">
+          <div class="error-container" *ngIf="studentForm.get('password')?.invalid && studentForm.get('password')?.touched">
+            <small class="error-text" *ngIf="studentForm.get('password')?.errors?.['required']">Şifre zorunlu.</small>
+            <small class="error-text" *ngIf="studentForm.get('password')?.errors?.['minlength']">En az 8 karakter.</small>
+            <small class="error-text" *ngIf="studentForm.get('password')?.errors?.['pattern']">1 büyük harf ve 1 noktalama işareti gerekli.</small>
+          </div>
+        </div>
+
+        <div class="input-group half-width">
+          <label for="confirmPassword">Şifre Tekrarı</label>
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="••••••••">
+          <div class="error-container" *ngIf="studentForm.get('confirmPassword')?.touched">
+            <small class="error-text" *ngIf="studentForm.get('confirmPassword')?.errors?.['required']">Şifre tekrarı zorunlu.</small>
+            <small class="error-text" *ngIf="studentForm.get('confirmPassword')?.errors?.['mismatch']">Şifreler eşleşmiyor!</small>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary" [disabled]="studentForm.invalid">Kaydı Tamamla</button>
+
+      <div class="register-prompt">
+        <a routerLink="/register" class="register-link">← Seçim Ekranına Dön</a>
+      </div>
+
+    </form>
+  </div>
+</div>
