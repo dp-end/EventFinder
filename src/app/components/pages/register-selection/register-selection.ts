@@ -12,7 +12,7 @@ export class RegisterSelection {
 
   selectRole(role: string){
     if(role === 'Öğrenci') {
-      this.router.navigate(['/student-register']);
+      this.router.navigate(['register-student']);
     }else if(role === 'Kulüp'){
       console.log('Kulüp seçildi, kulüp kayıt sayfasına yönlendiriliyor...');
     }
