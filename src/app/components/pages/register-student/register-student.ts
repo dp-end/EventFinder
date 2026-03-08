@@ -54,4 +54,13 @@ export class RegisterStudent {
       this.studentForm.markAllAsTouched();
     }
   }
+  // register-student.component.ts içine ekle
+
+goBack() {
+  // Eğer sadece bir önceki sayfaya dönmek istiyorsan:
+  window.history.back();
+
+  // VEYA daha kontrollü bir şekilde seçim ekranına dönmek istiyorsan:
+  // this.router.navigate(['/register']);
+}
 }

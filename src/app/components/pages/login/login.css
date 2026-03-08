@@ -1,185 +1,137 @@
-/* Animasyonlu Canlı Arka Plan */
-.eventfinder-wrapper {
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+:host {
+  /* Daha canlı ve enerjik renk geçişleri */
+  --primary-gradient: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%);
+  --accent-color: #667eea;
+  --input-focus: rgba(102, 126, 234, 0.25);
+}
+
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #6B5B95, #3B8BEB);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 20px;
+  overflow: hidden;
+
+  /* CANLI ÜNİVERSİTE FESTİVALİ VE KONSER ARKA PLANI */
+  /* Bu görsel, renkli ışıklar ve eğlenen gençlerle tam bir etkinlik havası verir */
+  background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Arka plan üzerine renkli ve hareketli bir katman (Biraz daha şeffaf bıraktık) */
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-gradient);
+  z-index: 1;
 }
 
-/* Glassmorphism (Buzlu Cam) Form Kartı */
-.glass-card {
+.login-card {
+  position: relative;
+  z-index: 2; /* Arka planın üstünde kalması için */
+  background: rgba(255, 255, 255, 0.85); /* Formun net okunması için hafif opak */
+  backdrop-filter: blur(20px); /* Arka plandaki görseli daha fazla bulanıklaştırır */
+  padding: 2.8rem;
+  border-radius: 28px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 400px;
-  padding: 40px 30px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  color: #fff;
-  text-align: center;
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* Header ve Logo */
-.header-section {
-  margin-bottom: 30px;
+.logo-wrapper {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 65px;
+  height: 65px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.icon-bg {
-  display: inline-flex;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-.event-icon {
-  width: 32px;
-  height: 32px;
-  color: #fff;
-}
-
-.brand-name {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0 0 5px 0;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+.title-group h2 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #1a202c;
   margin: 0;
 }
 
-/* Form Elemanları */
-.login-form {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.input-group {
-  margin-bottom: 20px;
-}
-
-.input-group label {
-  display: block;
-  font-size: 13px;
-  margin-bottom: 8px;
-  color: rgba(255, 255, 255, 0.9);
+.title-group p {
+  color: #4a5568;
   font-weight: 500;
+  margin-top: 6px;
+  font-size: 0.95rem;
 }
 
-.input-group input {
+/* Form elemanları bir öncekiyle uyumlu devam ediyor */
+.form-group { margin-bottom: 1.5rem; text-align: left; }
+
+.label-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+
+.form-group label { font-weight: 600; font-size: 0.85rem; color: #2d3748; }
+
+input {
   width: 100%;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  color: #fff;
-  font-size: 15px;
-  outline: none;
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  background: white;
+  font-size: 1rem;
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
-.input-group input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px var(--input-focus);
 }
 
-.input-group input:focus {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: #fff;
-}
-
-/* Hata Mesajı Stilleri (Yeni Eklendi) */
-.error-container {
-  margin-top: 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.error-text {
-  color: #ff9b9b;
-  font-size: 12px;
-  font-weight: 500;
-  display: block;
-}
-
-/* Şifremi Unuttum */
-.forgot-password {
-  text-align: right;
-  margin-bottom: 25px;
-  margin-top: -10px;
-}
-
-.forgot-password a {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.forgot-password a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* Ana Buton */
-.btn-primary {
+.submit-btn {
   width: 100%;
-  padding: 14px;
-  background: #fff;
-  color: #FF6B6B;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
   border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  margin-bottom: 20px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(102, 126, 234, 0.4);
 }
 
-.btn-primary:hover:not(:disabled) {
+.submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+  box-shadow: 0 15px 25px -5px rgba(102, 126, 234, 0.5);
 }
 
-/* Buton inaktif (disabled) olduğundaki görünüm (Yeni Eklendi) */
-.btn-primary:disabled {
-  background: rgba(255, 255, 255, 0.5);
-  color: rgba(255, 107, 107, 0.5);
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+.footer-link {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #4a5568;
 }
 
-/* Kayıt Ol Kısmı */
-.register-prompt {
-  text-align: center;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.register-link {
-  color: #fff;
-  font-weight: 600;
+.footer-link a {
+  color: #667eea;
+  font-weight: 700;
   text-decoration: none;
 }
 
-.register-link:hover {
-  text-decoration: underline;
-}
+.error-msg { color: #e53e3e; font-size: 0.8rem; margin-top: 5px; display: block; }

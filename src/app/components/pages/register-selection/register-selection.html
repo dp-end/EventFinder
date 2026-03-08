@@ -1,28 +1,31 @@
-<div class="eventfinder-wrapper">
-  <div class="glass-card">
+<div class="register-container">
+  <div class="register-card">
 
     <div class="header-section">
-      <h1 class="brand-name">Aramıza Katıl</h1>
-      <p class="subtitle">EventFinder'a nasıl kayıt olmak istersin?</p>
+      <button class="back-btn" routerLink="/login">←</button>
+      <div class="title-group">
+        <h2>Aramıza Katıl</h2>
+        <p>Nasıl kayıt olmak istersin?</p>
+      </div>
     </div>
 
-    <div class="selection-container">
-
-      <button class="selection-btn" (click)="selectRole('Öğrenci')">
-        <div class="icon-wrapper">
+    <div class="selection-grid">
+      <div class="selection-item" (click)="selectRole('Öğrenci')">
+        <div class="icon-box student-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
         </div>
-        <div class="text-wrapper">
-          <h3>Öğrenci Kayıt</h3>
-          <p>Etkinliklere katıl, bilet al ve sosyalleş.</p>
+        <div class="info">
+          <h3>Öğrenci Kaydı</h3>
+          <p>Etkinlikleri keşfet ve katıl</p>
         </div>
-      </button>
+        <div class="arrow">→</div>
+      </div>
 
-      <button class="selection-btn" (click)="selectRole('Kulüp')">
-        <div class="icon-wrapper club-icon">
+      <div class="selection-item" (click)="selectRole('Kulüp')">
+        <div class="icon-box club-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
@@ -30,15 +33,18 @@
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
         </div>
-        <div class="text-wrapper">
-          <h3>Kulüp Kayıt</h3>
-          <p>Etkinlikler oluştur, yönet ve öğrencilere ulaş.</p>
+        <div class="info">
+          <h3>Topluluk Kaydı</h3>
+          <p>Etkinlik oluştur ve yönet</p>
         </div>
-      </button>
-
+        <div class="arrow">→</div>
+      </div>
     </div>
 
-    <button class="btn-back" routerLink="/login">Giriş Sayfasına Dön</button>
+    <div class="footer-link">
+      <span>Zaten bir hesabın var mı? </span>
+      <a routerLink="/login">Giriş Yap</a>
+    </div>
 
   </div>
 </div>
