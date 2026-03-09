@@ -1,0 +1,82 @@
+<div class="detail-wrapper" *ngIf="event">
+  <button class="back-btn" routerLink="/home">← Geri Dön</button>
+
+  <div class="detail-card">
+    <div class="hero-image">
+      <img [src]="event.imageUrl" [alt]="event.title">
+      <span class="price-tag">{{ event.price }}</span>
+    </div>
+
+    <div class="main-content">
+      <div class="club-header">
+        <div class="club-avatar">{{ event.clubInitials }}</div>
+        <div class="club-meta">
+          <h4>{{ event.clubName }}</h4>
+          <p>Organizatör Topluluk</p>
+        </div>
+      </div>
+
+      <h1 class="event-title">{{ event.title }}</h1>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="info-icon">📅</span>
+          <div>
+            <label>Tarih ve Saat</label>
+            <p>{{ event.date }}</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <div>
+            <label>Konum</label>
+            <p>{{ event.location }}</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">👥</span>
+          <div>
+            <label>Kontenjan</label>
+            <p>{{ event.capacity }} Katılımcı</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="description">
+        <h3>Etkinlik Hakkında</h3>
+        <p>{{ event.description }}</p>
+      </section>
+
+      <div class="action-bar">
+        <div class="stats">
+          <div class="stat-item">❤️ {{ event.likes }} Beğeni</div>
+          <div class="stat-item">💬 {{ event.commentsCount }} Yorum</div>
+        </div>
+        <button class="reserve-btn">Rezervasyon Yap</button>
+      </div>
+
+      <hr class="divider">
+
+      <section class="comments-section">
+        <h3>Yorumlar</h3>
+        <div class="comment-box">
+          <input type="text" placeholder="Düşüncelerini paylaş...">
+          <button class="send-btn">Gönder</button>
+        </div>
+
+        <div class="comments-list">
+          <div class="comment-card" *ngFor="let comment of comments">
+            <div class="user-avatar">{{ comment.initials }}</div>
+            <div class="comment-body">
+              <div class="comment-header">
+                <strong>{{ comment.user }}</strong>
+                <span>{{ comment.time }}</span>
+              </div>
+              <p>{{ comment.text }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

@@ -27,8 +27,12 @@ export class Login {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log('Giriş Denemesi:', this.loginForm.value);
-      // Başarılı giriş sonrası yönlendirme buraya gelecek
+
+      // ŞİMDİLİK SİMÜLASYON: Form geçerliyse direkt Home sayfasına yönlendir!
+      this.router.navigate(['/home']);
+
     } else {
+      // Form hatalıysa uyarıları göster
       this.loginForm.markAllAsTouched();
     }
   }
